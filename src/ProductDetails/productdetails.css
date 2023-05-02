@@ -1,0 +1,32 @@
+
+    .containers{
+        width:80%;
+        margin: 0 auto;
+        font-family: sans-serif;
+    }
+    .rowproduct{
+        display: flex;
+        margin:30px 0;
+    }
+   .productsection .col{
+        width:50%;
+    }
+    .productcontent2{
+        padding:0 40px ;
+    }
+    .productcontent2 h1{
+        color:blue;
+        padding: 10px  0;
+        font-size: 50px;
+    }
+    .productcontent2 p{
+        font-size: 20px;
+        color:gray;
+
+    }
+    .productcontent2 h2 span{
+        color:red;
+    }
+    .pad{
+        padding: 10px 0;
+    }

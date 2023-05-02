@@ -1,0 +1,24 @@
+.box-sec{
+    margin: 20px 0;
+  }
+    .product-row{
+      display: flex;
+      justify-content: space-between;
+     
+    }
+
+   
+    .head-sec{
+      border-bottom: solid 2px #b9b2b273;
+      padding: 5px 0;
+    }
+    .col-lg-3{
+     width:25%;
+   }
+    .box-sec img{
+        width:95%;
+        border: solid 1px #b9b2b273;
+    }
+    .box-sec img:hover{
+        box-shadow: 0 0 10px #ccc;
+    }

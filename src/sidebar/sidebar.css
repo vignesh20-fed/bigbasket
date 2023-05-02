@@ -1,0 +1,44 @@
+.table-conatiner {
+    width: 95%;
+    margin: auto;
+}
+    .table-row {
+      display: flex;
+    }
+      .table-col {
+        padding-top: 20px;
+        border-right:1px solid #ccc;
+      }
+        
+            .seat  label {
+              padding: 0 7px;
+            }
+       
+
+        .filter {
+          padding-bottom: 15px;
+          border-bottom: 1px solid #d7d7d7;
+          color: #3e3e52eb;
+          font-size: 12px;
+          font-weight: 800;
+        }
+
+        .time h5 {
+            padding: 20px 0 10px 0;
+            color: #3e3e52eb;
+            font-size: 12px;
+            font-weight: 800;
+          }
+       
+
+          .time  li {
+          padding: 7px 0;
+          list-style-type: none;
+          color: #3e3e52bd;
+          }
+          .time  li   iconify-icon {
+            margin: 0 10px;
+          }
+        
+      
+

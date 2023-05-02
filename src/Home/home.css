@@ -1,0 +1,70 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.team{
+    padding: 40px 0;
+}
+.teamcontainer{
+    width:80%;
+    margin:0 auto;
+}
+.teamcontainer h1{
+    font-weight: 400;
+    font-size: 40px;
+    color: #0c5b47;
+    text-align: center;
+    padding-bottom: 40px;
+}
+.teamrow{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+.teamcol{
+    width:25%;
+    position:relative;
+    transition: 0.3s;
+    padding:10px 10px;
+}
+
+
+.css-o69gx8-MuiCardMedia-root {
+    width:50% !important;
+}
+
+.headimage img{
+   width:100%;
+}
+.image-card{
+    display: flex;
+    justify-content: center;
+}
+
+.cardflex{
+    display: flex;
+
+}
+.cardicon{
+    color:gray;
+    padding-right:10px;
+}
+.cardfoot{
+    display: flex;
+    justify-content: space-between;
+    /* justify-content: center; */
+
+}
+.footicon{
+    background: #fee67c;
+    border: none;
+    border-radius: 5px;
+    cursor:pointer;
+    padding:10px;
+    margin-top:3px;
+}
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    padding:0 !important;
+    height:0 !important;
+}
