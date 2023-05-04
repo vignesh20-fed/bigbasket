@@ -93,7 +93,7 @@ const Navigate=useNavigate();
             beverage.map((value,index)=>{
                return(
                <div className='col-lg-3 box-sec' key={index}>
-                  <img src={value.img} ></img>
+                  <img src={value.img} onClick={() => Navigate(`/bev${index+1}`)} ></img>
                   
                </div>
                )

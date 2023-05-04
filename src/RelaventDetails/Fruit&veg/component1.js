@@ -13,9 +13,10 @@ import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { stateContext } from '../../context/statecontext.js';
 import { useNavigate , Link} from 'react-router-dom';
 import "./component.css"
+import Nav from '../../Nav/Nav';
 import Footer from '../../Footer/footer.js';
 import Sidebar from '../../sidebar/Sidebar.js';
-
+import { Icon } from '@iconify/react';
 const Component1 = () => {
     const {state:{cart,teams},dispatch}= useContext(stateContext)
     console.log(cart)
@@ -43,6 +44,7 @@ const Component1 = () => {
          stock:"20",
          delievery:"Standard Delivery: Tomorrow 9:00AM - 1:30PM",
          quantity:["2kg-Rs 46.00","1kg-RS 80.00","5kg-RS 500.00"],
+         offer:"GET 20% OFF"
        },
        {
            id:10,
@@ -54,6 +56,7 @@ const Component1 = () => {
            stock:"20",
            delievery:"Standard Delivery: Tomorrow 9:00AM - 1:30PM",
            quantity:["2kg-Rs 40.00","1kg-RS 20.00","250g-RS 20.00"],
+           offer:"GET 30% OFF"
          },
          {
            id:11,
@@ -65,6 +68,7 @@ const Component1 = () => {
            stock:"20",
            delievery:"Standard Delivery: Tomorrow 9:00AM - 1:30PM",
            quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 20.00","500g-Rs 40.00"],
+           offer:"GET 60% OFF"
          },
          {
            id:12,            
@@ -76,6 +80,7 @@ const Component1 = () => {
            stock:"20",
            delievery:"Standard Delivery: Tomorrow 9:00AM - 1:30PM",
            quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 20.00","500g-Rs 40.00"],
+           offer:"GET 80% OFF"
          },
          {
            id:13,
@@ -87,6 +92,7 @@ const Component1 = () => {
              stock:"20",
              delievery:"Standard Delivery: Tomorrow 9:00AM - 1:30PM",
              quantity:["50g-Rs 5.00","1kg-RS 50.00","250g-RS 10.00","500g-Rs 15.00"],
+             offer:"GET 70% OFF"
            },
            {
              id:14,
@@ -98,7 +104,9 @@ const Component1 = () => {
              stock:"20",
              delievery:"Standard Delivery: Tomorrow 9:00AM - 1:30PM",
              quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 80.00","500g-Rs 60.00"],
+             offer:"GET 40% OFF"
            },
+
            {  
                id:15,
                img:"https://www.bigbasket.com/media/uploads/p/l/10000063_20-fresho-broccoli.jpg",
@@ -109,6 +117,7 @@ const Component1 = () => {
                stock:"20",
                delievery:"Standard Delivery: Tomorrow 9:00AM - 1:30PM",
                quantity:["50g-Rs 10.00","1kg-RS 90.00","250g-RS 15.00","500g-Rs 40.00"],
+               offer:"GET 50% OFF"
              },
              {
                id:16,
@@ -120,6 +129,7 @@ const Component1 = () => {
                stock:"20",
                delievery:"Standard Delivery: Tomorrow 9:00AM - 1:30PM",
                quantity:["50g-Rs 10.00","1kg-RS 100.00","250g-RS 30.00","500g-Rs 50.00"],
+               offer:"GET 90% OFF"
              },
    ]
     const extracard = () => {
@@ -148,8 +158,8 @@ const Component1 = () => {
 
   return (
     <div>
+      {/* <Nav/> */}
         <div class="fruitcontainer">
-        <Link to="/fourthslide">,dcml;mc</Link>
             <div class="fruitrow">
             <div className='fruitcol1'>
                 <Sidebar/>
@@ -164,12 +174,12 @@ const Component1 = () => {
                       <Card sx={{ maxWidth: 300 }} className='cardcolor'>
                         <div className='image-card' onClick={()=>productShow(value, func)}>
                             <CardMedia
-
+                                  
                                 component="img"
                                 // height="auto"
                                 image={value.img}
                                 alt="vicky"
-                                className="image"
+                                className="position"
                                 
                             />
                             </div>
@@ -213,9 +223,9 @@ const Component1 = () => {
                                 </div>
                                 <div className='cardfoot'>
                                 <div>
-                                 <h6>QUANTITY</h6>   
+                                 <h6>QUANTITY:</h6>   
                                 <button className='btn' onClick={()=>decrement(value.id)}>-</button>
-                                <input class="inputcard" value={func[value.id] } size={5}/>
+                                <input class="inputcard" value={func[value.id] } size={1}/>
                                  <button className='btn' onClick={()=>increment(value.id,value.stock)}>+</button>
                                     </div>
                                     <div>
@@ -230,6 +240,7 @@ const Component1 = () => {
                                     </div>
                                 </div>
                             </CardContent>
+                            <h5 className='offer'>{value.offer}<Icon icon="bxs:offer" className="offericon" /></h5>
                             </Card>
                         </div>
                         

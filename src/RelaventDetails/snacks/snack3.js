@@ -16,7 +16,7 @@ import StarIcon from '@mui/icons-material/Star';
 import "./snack.css"
 import Footer from '../../Footer/footer.js';
 import Sidebar from '../../sidebar/Sidebar.js';
-
+import Nav from '../../Nav/Nav';
 const Snack3 = () => {
     const {state:{cart,teams},dispatch}= useContext(stateContext)
     console.log(cart)
@@ -32,10 +32,94 @@ const Snack3 = () => {
       navigate4("/secondslide");
       dispatch({type:"DETAILS",payload:{obj : value, quantity : qty}})
     }
+    let snack3=[
+      {
+         id:81,
+         img:"https://www.bigbasket.com/media/uploads/p/l/40195263_7-sunfeast-yippee-noodles-magic-masala.jpg",
+         icon:"https://www.bbassets.com/static/v2662/custPage/build/content/img/vegicon.svg",
+         heading:"Tasties",
+         details:"Khata Meetha",
+         rating:"4",
+         rupees:"RS 50",
+         delievery:"Standard Delivery : Not available",
+         quantity:["2kg-Rs 46.00","1kg-RS 80.00","5kg-RS 500.00"],
+       },
+       {
+           id:82,
+           img:"https://www.bigbasket.com/media/uploads/p/l/40015686_9-del-monte-tomato-ketchup-classic-blend-rich-thick-condiment.jpg",
+           heading:"Tasties",
+           details:"Aloo Bhujia Namkeen",
+           rating:"4",
+           rupees:"RS 15",
+           delievery:"Standard Delivery: Not available",
+           quantity:["2kg-Rs 40.00","1kg-RS 20.00","250g-RS 20.00"],
+         },
+         {
+           id:83,
+           img:"https://www.bigbasket.com/media/uploads/p/l/40214658_3-tasties-vinegar.jpg",
+           heading:"24 Mantra Organic",
+           details:"Peanut Joggery Chikki",
+           rating:"4",
+           rupees:"RS 50",
+           delievery:"Standard Delivery : Not available",
+           quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 20.00","500g-Rs 40.00"],
+         },
+         {
+           id:84,            
+           img:"https://www.bigbasket.com/media/uploads/p/l/40125873_5-maggi-2-minute-noodles-masala.jpg",
+           heading:"Britannia NutriChoice",
+           details:"Digestive High Fibre Biscuits -",
+           rating:"4.2",
+           rupees:"RS 199",
+           delievery:"Standard Delivery: Not available",
+           quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 20.00","500g-Rs 40.00"],
+         },
+         {
+           id:85,
+             img:"https://www.bigbasket.com/media/uploads/p/l/40112467_9-happychef-durum-wheat-pasta-spaghetti.jpg",
+             heading:"Tasties",
+             details:"Namkeen-Khatta Murruku",
+             rating:"3.6",
+             rupees:"RS 14",
+             delievery:"Standard Delivery: Not available",
+             quantity:["50g-Rs 5.00","1kg-RS 50.00","250g-RS 10.00","500g-Rs 15.00"],
+           },
+           {
+             id:86,
+             img:"https://www.bigbasket.com/media/uploads/p/l/40222038_2-habanero-creamy-white-pasta-sauce-cheese-sauce.jpg",
+             heading:"Cadbury Oreo",
+             details:"Original Vanilla-Flavoured",
+             rating:"4.2",
+             rupees:"RS 85",
+             stock:"20",
+             delievery:"Standard Delivery: Not available",
+             quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 80.00","500g-Rs 60.00"],
+           },
+           {  
+               id:87,
+               img:"https://www.bigbasket.com/media/uploads/p/l/202277_9-dabur-100-pure-honey-worlds-no1-honey-brand-with-no-sugar-adulteration.jpg",
+               heading:"Pringles",
+               details:"Potato Chips - Sour Cream",
+               rating:"4.2",
+               rupees:"RS 115",
+               delievery:"Standard Delivery: Not available",
+               quantity:["50g-Rs 10.00","1kg-RS 90.00","250g-RS 15.00","500g-Rs 40.00"],
+             },
+             {
+               id:88,
+               img:"https://www.bigbasket.com/media/uploads/p/l/40073727_10-bb-royal-100-pure-honey.jpg",
+               heading:"Britannia",
+               details:"Marie Gold Biscuit ",
+               rating:"4.2",
+               rupees:"RS 140",
+               delievery:"Standard Delivery: Not available",
+               quantity:["50g-Rs 10.00","1kg-RS 100.00","250g-RS 30.00","500g-Rs 50.00"],
+             },
+   ]
     const extracard = () => {
         let a = {}
-        for(let i=0; i<teams.length ;i++){
-             a[teams[i].id] = 1;
+        for(let i=0; i<snack3.length ;i++){
+             a[snack3[i].id] = 1;
         }
         return a;
     }
@@ -55,94 +139,11 @@ const Snack3 = () => {
           setFunc(prevcount => ({...prevcount, [id] : prevcount[id] + 1}))
         }
       }
-     let snack3=[
-        {
-           id:1,
-           img:"https://www.bigbasket.com/media/uploads/p/l/40195263_7-sunfeast-yippee-noodles-magic-masala.jpg",
-           icon:"https://www.bbassets.com/static/v2662/custPage/build/content/img/vegicon.svg",
-           heading:"Tasties",
-           details:"Khata Meetha",
-           rating:"4",
-           rupees:"RS 50",
-           delievery:"Standard Delivery : Not available",
-           quantity:["2kg-Rs 46.00","1kg-RS 80.00","5kg-RS 500.00"],
-         },
-         {
-             id:2,
-             img:"https://www.bigbasket.com/media/uploads/p/l/40015686_9-del-monte-tomato-ketchup-classic-blend-rich-thick-condiment.jpg",
-             heading:"Tasties",
-             details:"Aloo Bhujia Namkeen",
-             rating:"4",
-             rupees:"RS 15",
-             delievery:"Standard Delivery: Not available",
-             quantity:["2kg-Rs 40.00","1kg-RS 20.00","250g-RS 20.00"],
-           },
-           {
-             id:3,
-             img:"https://www.bigbasket.com/media/uploads/p/l/40214658_3-tasties-vinegar.jpg",
-             heading:"24 Mantra Organic",
-             details:"Peanut Joggery Chikki",
-             rating:"4",
-             rupees:"RS 50",
-             delievery:"Standard Delivery : Not available",
-             quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 20.00","500g-Rs 40.00"],
-           },
-           {
-             id:4,            
-             img:"https://www.bigbasket.com/media/uploads/p/l/40125873_5-maggi-2-minute-noodles-masala.jpg",
-             heading:"Britannia NutriChoice",
-             details:"Digestive High Fibre Biscuits -",
-             rating:"4.2",
-             rupees:"RS 199",
-             delievery:"Standard Delivery: Not available",
-             quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 20.00","500g-Rs 40.00"],
-           },
-           {
-             id:5,
-               img:"https://www.bigbasket.com/media/uploads/p/l/40112467_9-happychef-durum-wheat-pasta-spaghetti.jpg",
-               heading:"Tasties",
-               details:"Namkeen-Khatta Murruku",
-               rating:"3.6",
-               rupees:"RS 14",
-               delievery:"Standard Delivery: Not available",
-               quantity:["50g-Rs 5.00","1kg-RS 50.00","250g-RS 10.00","500g-Rs 15.00"],
-             },
-             {
-               id:6,
-               img:"https://www.bigbasket.com/media/uploads/p/l/40222038_2-habanero-creamy-white-pasta-sauce-cheese-sauce.jpg",
-               heading:"Cadbury Oreo",
-               details:"Original Vanilla-Flavoured",
-               rating:"4.2",
-               rupees:"RS 85",
-               stock:"20",
-               delievery:"Standard Delivery: Not available",
-               quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 80.00","500g-Rs 60.00"],
-             },
-             {  
-                 id:7,
-                 img:"https://www.bigbasket.com/media/uploads/p/l/202277_9-dabur-100-pure-honey-worlds-no1-honey-brand-with-no-sugar-adulteration.jpg",
-                 heading:"Pringles",
-                 details:"Potato Chips - Sour Cream",
-                 rating:"4.2",
-                 rupees:"RS 115",
-                 delievery:"Standard Delivery: Not available",
-                 quantity:["50g-Rs 10.00","1kg-RS 90.00","250g-RS 15.00","500g-Rs 40.00"],
-               },
-               {
-                 id:8,
-                 img:"https://www.bigbasket.com/media/uploads/p/l/40073727_10-bb-royal-100-pure-honey.jpg",
-                 heading:"Britannia",
-                 details:"Marie Gold Biscuit ",
-                 rating:"4.2",
-                 rupees:"RS 140",
-                 delievery:"Standard Delivery: Not available",
-                 quantity:["50g-Rs 10.00","1kg-RS 100.00","250g-RS 30.00","500g-Rs 50.00"],
-               },
-     ]
+
   return (
     <div>
         <div class="fruitcontainer">
-        <Link to="/fourthslide">,dcml;mc</Link>
+        <Nav/>
             <div class="fruitrow">
             <div className='fruitcol1'>
                 <Sidebar/>

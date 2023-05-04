@@ -1,18 +1,16 @@
-import React,{useContext, useState} from 'react'
+import React,{useContext, useEffect, useState} from 'react'
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import Card from '@mui/material/Card';
 import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { stateContext } from '../context/statecontext.js';
 import { useNavigate , Link} from 'react-router-dom';
-import Nav from '../Nav/Nav.js';
+import { Icon } from '@iconify/react';
+import Nav from '../Nav/Nav';
 import Footer from '../Footer/footer.js'
 import "./home.css"
 import RelavantProducts from '../RelaventProduct/RelavantProduct.js';
@@ -41,49 +39,65 @@ const Home = () => {
         return a;
     }
     console.log(extracard());
+    const [qty, setQty] = useState('')
+    console.log(qty)
     const [func,setFunc]=useState(extracard())
     console.log(func);
+
+    useEffect(() => {
+      dispatch({
+        type:"QTY",
+        payload:qty,
+      })
+    },[qty])
+
     const decrement = (id) =>{
        
         if(func[id] > 0){
           setFunc(prevcount => ({...prevcount,[id] : prevcount[id] - 1}))
         }
-   
+        setQty(func[id])
+       
       }
   
       const increment = (id,stock) =>{
         if(func[id] < stock){
           setFunc(prevcount => ({...prevcount, [id] : prevcount[id] + 1}))
         }
+    
       }
+
+   
   
   return (
     <section className="team">
-
+       <Nav/>
         <div class="headimage">
             <img src="https://www.bigbasket.com/media/uploads/banner_images/2305152-bbpl-staples_460_Bangalore.jpg"></img>
         </div>
     <div className="teamcontainer">
+   
     <h1>My Smart Basket</h1>
-    <Link to="/fourthslide">,dcml;mc</Link>
         <div class="teamrow">
         {teams.map((value,index)=>{
                       return <>
                       <div className='teamcol'>
                       <div className='formcard' key={index}>
+                        
                       <Card sx={{ maxWidth: 300 }} className='cardcolor'>
+                      
                         <div className='image-card' onClick={()=>productShow(value, func)}>
+                        
                             <CardMedia
-
                                 component="img"
                                 // height="auto"
                                 image={value.img}
                                 alt="vicky"
-                                className="image"
+                                className="image position"
                                 
                             />
                             </div>
-                           
+                            
                             <CardContent >
                             <div>
                                 <img src="https://www.bbassets.com/static/v2662/custPage/build/content/img/vegicon.svg"></img>
@@ -123,15 +137,15 @@ const Home = () => {
                                 </div>
                                 <div className='cardfoot'>
                                 <div>
-                                 <h6>QUANTITY</h6>   
+                                 <h6>QUANTITY:</h6>   
                                 <button className='btn' onClick={()=>decrement(value.id)}>-</button>
-                                <input class="inputcard" value={func[value.id] } size={10}/>
+                                <input class="inputcard" value={func[value.id] } size={1}/>
                                  <button className='btn' onClick={()=>increment(value.id,value.stock)}>+</button>
                                     </div>
                                     <div>
                                     
                                         {cart.some(e => e.id === value.id) ? (
-                                             <button className='footicon' onClick={()=>dispatch({type:"REMOVE",payload:value})} style={{backgroundColor:'red'}}>ADD CART</button>
+                                             <button className='footicon' onClick={()=>dispatch({type:"REMOVE",payload:value})} style={{backgroundColor:'red',color:"white"}}>REMOVE</button>
                                         ) : (
                                             <button className='footicon' onClick={()=>dispatch({type:"CART",payload:value})} >ADD CART</button>
                                         )}
@@ -140,6 +154,7 @@ const Home = () => {
                                     </div>
                                 </div>
                             </CardContent>
+                            <h5 className='offer'>{value.offer}<Icon icon="bxs:offer" className="offericon" /></h5>
                             </Card>
                         </div>
                         </div>

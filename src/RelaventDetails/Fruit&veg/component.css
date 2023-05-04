@@ -7,9 +7,9 @@
    flex-wrap: wrap;
    justify-content: center;
 }
+
 .fruitcol1{
     width:20%;
-    position:relative;
     transition: 0.3s;
     padding:10px 10px;
 }
@@ -19,8 +19,23 @@
 }
 .fruitcol3{
     width: 25%;
-    padding: 20px 10px;
+  
+   
 }
 .fruitcol2{
     width:70%;
 }
+ .position{
+    position: relative ;
+}
+
+.offer{
+    position: absolute;
+    top:0;
+    text-align: center;
+    background-color: #fff;
+    color:red;
+    box-shadow: 0 0 20px #ccc;
+    padding: 4px;
+}
+

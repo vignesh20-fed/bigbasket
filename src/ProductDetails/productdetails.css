@@ -11,13 +11,16 @@
    .productsection .col{
         width:50%;
     }
+    .productcontent img{
+        width:80% !important;
+    }
     .productcontent2{
         padding:0 40px ;
     }
     .productcontent2 h1{
         color:blue;
         padding: 10px  0;
-        font-size: 50px;
+        font-size: 40px;
     }
     .productcontent2 p{
         font-size: 20px;
@@ -29,4 +32,36 @@
     }
     .pad{
         padding: 10px 0;
+    }
+    .product-content{
+        display: flex;
+        padding-top: 10px;
+    }
+    .footicons{
+        border:1px solid #999;
+        border-radius: 5px;
+        cursor:pointer;
+        padding:8px 20px;
+    }
+    .footicons1{
+        background: #fee67c;
+        border: none;
+        border-radius: 5px;
+        cursor:pointer;
+        padding:10px;
+        margin:0px 30px;
+    }
+    .product-card{
+        padding-top:5px;
+    }
+    .btn{
+        text-decoration:none;
+        color:white;
+        background-color:lightgreen;
+        padding:0px 8px ;
+        text-align:center;
+        border:none;
+        border-radius:6px;
+        font-size:20px;
+        cursor: pointer;
     }

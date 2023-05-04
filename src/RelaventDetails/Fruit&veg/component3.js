@@ -15,6 +15,7 @@ import { useNavigate , Link} from 'react-router-dom';
 import "./component.css"
 import Footer from '../../Footer/footer.js';
 import Sidebar from '../../sidebar/Sidebar.js';
+import Nav from '../../Nav/Nav';
 
 
 const Component3 = () => {
@@ -149,6 +150,7 @@ const Component3 = () => {
   
   return (
     <div>
+      <Nav/>
         <div class="fruitcontainer">
             <div class="fruitrow">
             <div className='fruitcol1'>
@@ -213,15 +215,15 @@ const Component3 = () => {
                                 </div>
                                 <div className='cardfoot'>
                                 <div>
-                                 <h6>QUANTITY</h6>   
+                                 <h6>QUANTITY:</h6>   
                                 <button className='btn' onClick={()=>decrement(value.id)}>-</button>
-                                <input class="inputcard" value={func[value.id] } size={6}/>
+                                <input class="inputcard" value={func[value.id] } size={1}/>
                                  <button className='btn' onClick={()=>increment(value.id,value.stock)}>+</button>
                                     </div>
                                     <div>
                                     
                                         {cart.some(e => e.id === value.id) ? (
-                                             <button className='footicon' onClick={()=>dispatch({type:"REMOVE",payload:value})} style={{backgroundColor:'red'}}>REMOVE CART</button>
+                                             <button className='footicon' onClick={()=>dispatch({type:"REMOVE",payload:value})} style={{backgroundColor:'red',color:'white'}}>REMOVE</button>
                                         ) : (
                                             <button className='footicon' onClick={()=>dispatch({type:"CART",payload:value})} >ADD CART</button>
                                         )}

@@ -2,16 +2,19 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    height:100px;
   background-color: #fff;
   }
+
   .navimg img{
-     width:60%;
+     width:40%;
   }
   .searchic{
     background-color:lightgreen;
     color:#000;
     padding: 7px 0;
+  }
+  .col-lg-4{
+    width:33.3%
   }
   ::placeholder{
     color:#000 !important;
@@ -20,4 +23,27 @@
   .shopicon{
     color:red;
     padding: 20px 40px;
+  }
+  .cartrows{
+     display:flex;
+     flex-wrap: wrap;
+     color:#000;
+     background-color: #fff;
+     box-shadow: 0 0 30px #ccc;
+     justify-content: space-between;
+     
+  }
+  .col-nav-1{
+    width:33.3%;
+    padding: 10px 0;
+  }
+  .navimg2 img{
+    width:35%;
+  }
+  .menucontent{
+    margin-right: 30px !important;
+  }
+  .navicon{
+    color:lightgreen !important;
+    font-size: 30px !important;
   }

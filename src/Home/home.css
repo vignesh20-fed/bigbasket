@@ -3,9 +3,6 @@
     padding:0;
     box-sizing: border-box;
 }
-.team{
-    padding: 40px 0;
-}
 .teamcontainer{
     width:80%;
     margin:0 auto;
@@ -21,6 +18,7 @@
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
+   align-items: center;
 }
 .teamcol{
     width:25%;
@@ -29,13 +27,16 @@
     padding:10px 10px;
 }
 
-
+.position{
+    position: relative;
+}
 .css-o69gx8-MuiCardMedia-root {
     width:50% !important;
 }
 
 .headimage img{
    width:100%;
+   padding-top: 20px;
 }
 .image-card{
     display: flex;
@@ -44,6 +45,7 @@
 
 .cardflex{
     display: flex;
+    padding: 8px 0;
 
 }
 .cardicon{
@@ -63,8 +65,28 @@
     cursor:pointer;
     padding:10px;
     margin-top:3px;
+    transition: 0.5s;
+}
+input{
+    text-align: center;
+    border: none;
 }
 .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
     padding:0 !important;
     height:0 !important;
+}
+.offer{
+    position: absolute;
+    top:0;
+    text-align: center;
+    background-color: #fff;
+    color:red;
+    box-shadow: 0 0 20px #ccc;
+    padding: 4px;
+}
+.css-46bh2p-MuiCardContent-root {
+    padding: 11px 16px;
+}
+.offericon{
+    font-size: 14px !important;
 }

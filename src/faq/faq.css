@@ -1,0 +1,21 @@
+.container{
+    width:100% !important;
+ }
+ .faq-sec{
+    margin-top: 30px;
+  }
+  .para{
+    padding: 15px 0;
+  }
+  .css-1elwnq4-MuiPaper-root-MuiAccordion-root{
+    background-color: #fff;
+   
+    color: rgba(0, 0, 0, 0.87);
+    border-radius: 4px;
+     box-shadow:none !important;
+    position: relative;
+    /* border-bottom: solid 1px grey; */
+    overflow-anchor: none;
+    border-radius: 0;
+    border-top: solid 1px rgba(128, 128, 128, 0.664);
+}
