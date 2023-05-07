@@ -12,29 +12,20 @@ import LocalShippingIcon from "@mui/icons-material/LocalShipping";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import { stateContext } from "../../context/statecontext.js";
 import { useNavigate, Link } from "react-router-dom";
-import "./component.css";
+// import "./component.css"
 import Footer from "../../Footer/footer.js";
 import Sidebar from "../../sidebar/Sidebar.js";
+
+
 import { Icon } from "@iconify/react";
 
-const Component3 = () => {
+const Beverages03 = () => {
   const {
-    state: { cart, vegetables3 },
+    state: { cart, beverage03 },
     dispatch,
   } = useContext(stateContext);
   console.log(cart);
 
-  const [age, setAge] = React.useState("");
-
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
-  let navigate4 = useNavigate();
-  const productShow = (value, qty) => {
-    navigate4("/secondslide");
-    dispatch({ type: "DETAILS", payload: { obj: value, quantity: qty } });
-  };
   const {
     filterState: {
       priceSort_below20,
@@ -51,29 +42,42 @@ const Component3 = () => {
     },
     filterDispatch,
   } = useContext(stateContext);
+  const [age, setAge] = useState("");
+
+  const handleChange = (event) => {
+    setAge(event.target.value);
+  };
+
+  let navigate4 = useNavigate();
+  const productShow = (value, qty) => {
+    navigate4("/secondslide");
+    dispatch({ type: "DETAILS", payload: { obj: value, quantity: qty } });
+  };
+
 
   const extracard = () => {
     let a = {};
-    for (let i = 0; i < vegetables3.length; i++) {
-      a[vegetables3[i].id] = 1;
+    for (let i = 0; i < beverage03.length; i++) {
+      a[beverage03[i].id] = 1;
     }
     return a;
   };
   console.log(extracard());
   const [func, setFunc] = useState(extracard());
   console.log(func);
+  const [qty, setQty] = useState(1);
+  console.log(qty);
   const decrement = (id) => {
-    vegetables3[id].qty -= 1;
-    dispatch({ type: "DEC", payload: vegetables3 });
+    beverage03[id].qty -= 1;
+    dispatch({ type: "DEC", payload: beverage03 });
   };
 
-  const increment = (id) => {
-    vegetables3[id].qty += 1;
-    dispatch({ type: "INC", payload: vegetables3 });
+  const increment = (id, stock) => {
+    beverage03[id].qty += 1;
+    dispatch({ type: "INC", payload: beverage03 });
   };
-
   const sortedProduct = () => {
-    let sortedArray = vegetables3;
+    let sortedArray = beverage03;
     if (priceSort_below20) {
       sortedArray = sortedArray.filter((item, index) => {
         return item.rupees <= 20;
@@ -132,6 +136,7 @@ const Component3 = () => {
     }
     return sortedArray;
   };
+
   return (
     <div>
       <div class="fruitcontainer">
@@ -160,7 +165,10 @@ const Component3 = () => {
                                 className="image"
                               />
                             </div>
-
+                            <h5 className="offer">
+                              GET {value.offer} % OFF
+                              <Icon icon="bxs:offer" className="offericon" />
+                            </h5>
                             <CardContent>
                               <div>
                                 <img src="https://www.bbassets.com/static/v2662/custPage/build/content/img/vegicon.svg"></img>
@@ -174,7 +182,7 @@ const Component3 = () => {
                                     <Select
                                       labelId="demo-simple-select-label"
                                       id="demo-simple-select"
-                                      value={age}
+                                      value="hello"
                                       label="Age"
                                       onChange={handleChange}
                                     >
@@ -186,12 +194,13 @@ const Component3 = () => {
                                 </Box>
                               </div>
                               <div>
+                                <div>{value.rating}</div>
                                 <h6>
                                   MRP:{" "}
                                   <span>
                                     <del>{value.strike}</del>
                                   </span>{" "}
-                                  <span>RS {value.rupees}</span>
+                                  <span>Rs {value.rupees}</span>
                                 </h6>
                               </div>
                               <div className="cardflex">
@@ -204,7 +213,7 @@ const Component3 = () => {
                               </div>
                               <div className="cardfoot">
                                 <div>
-                                  <h6>QUANTITY:</h6>
+                                  <h6>QUANTITY</h6>
                                   <button
                                     className="btn"
                                     onClick={() => decrement(index)}
@@ -256,10 +265,6 @@ const Component3 = () => {
                                 </div>
                               </div>
                             </CardContent>
-                            <h5 className="offer">
-                              GET {value.offer}% OFF
-                              <Icon icon="bxs:offer" className="offericon" />
-                            </h5>
                           </Card>
                         </div>
                       </div>
@@ -278,4 +283,4 @@ const Component3 = () => {
   );
 };
 
-export default Component3;
+export default Beverages03;

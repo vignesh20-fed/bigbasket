@@ -1,18 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import "./faq.css"
 import ScaleIcon from '@mui/icons-material/Scale';
 import AddIcon from '@mui/icons-material/Add';
+import { stateContext } from '../context/statecontext';
 
 const Faq = () => {
+  const {state:{get},dispatch}=useContext(stateContext)
+  console.log("stateproduct",get)
+
   return (
     <div>
          <div className ='container'>
            <div className='row'>
+           {[get.obj]?.map((value,index)=>{
+                      return <>
+                      <h1 className='faq1'>{value.details}</h1>
                <div className='col-lg-10 faq-sec'>
                <Accordion className='para'>
         <AccordionSummary
@@ -24,7 +30,7 @@ const Faq = () => {
         </AccordionSummary>
         <AccordionDetails>
           <Typography>
-          Fresho Potatoes are nutrient-dense, non-fattening and have reasonable amount of calories. Include them in your regular meals so that the body receives a good supply of carbohydrates, dietary fibers and essential minerals such as copper, magnesium, and iron. In India, potatoes are probably the second-most consumed vegetables after onions.
+          This {value.details} are nutrient-dense, non-fattening and have reasonable amount of calories. Include them in your regular meals so that the body receives a good supply of carbohydrates, dietary fibers and essential minerals such as copper, magnesium, and iron. In India, potatoes are probably the second-most consumed vegetables after onions.
             Click here for delicious vegetable recipes - https://www.bigbasket.com/flavors/collections/227/fresh-vegetables/
           </Typography>
         </AccordionDetails>
@@ -40,8 +46,8 @@ const Faq = () => {
         <AccordionDetails>
           <Typography>
            <ul>
-            <li>Consumption of potatoes helps to maintain the blood glucose level and keeps the brain alert and active. </li>
-          <li>Potatoes should be included in the diet of those having mouth ulcers. As they are easy to digest, they are good for patients.</li>
+          <li>Consumption of potatoes helps to maintain the blood glucose level and keeps the brain alert and active. </li>
+          <li>{value.details} should be included in the diet of those having mouth ulcers. As they are easy to digest, they are good for patients.</li>
           <li>People who are diagnosed with kidney stones or heart disorders can include potatoes in their diet as they are light on the stomach.</li>
           <li>Apart from containing useful minerals such as potassium, iron, copper and magnesium, potatoes are also full of phytochemical antioxidants such as flavonoids, Vitamin B and folate.</li>
            </ul>
@@ -59,7 +65,7 @@ const Faq = () => {
         <AccordionDetails>
           <Typography>
          <ul>
-          <li>Potatoes should always be stored in a cool, dark and dry place that is preferably in your visibility.If not attended to for a long time these potatoes will begin to sprout due to preferable environment conditions like that under the soil and end up loosing nutritional value.</li>
+          <li>Product should always be stored in a cool, dark and dry place that is preferably in your visibility.If not attended to for a long time these potatoes will begin to sprout due to preferable environment conditions like that under the soil and end up loosing nutritional value.</li>
          <li>Never keep under direct sunlight as they soon turn green due to the chlorophyll produced which releases some toxic substances.Refrigeration adversely affects the flavour of potatoes, therefore it is best to store them in paper bags. Remember, plastic bags promote moisture and speed decay process.</li>
         <li>They can be baked, roasted, steamed, grilled and deep fried. Also can be cooked and added to noodles, rice and curries.</li>
          </ul>
@@ -101,6 +107,8 @@ const Faq = () => {
         </AccordionDetails>
       </Accordion>
                </div>
+               </>
+            })}
            </div>
          </div>
     </div>

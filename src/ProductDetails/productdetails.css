@@ -14,9 +14,9 @@
     .productcontent img{
         width:80% !important;
     }
-    .productcontent2{
+    /* .productcontent2{
         padding:0 40px ;
-    }
+    } */
     .productcontent2 h1{
         color:blue;
         padding: 10px  0;
@@ -42,6 +42,7 @@
         border-radius: 5px;
         cursor:pointer;
         padding:8px 20px;
+        margin:5px 20px;
     }
     .footicons1{
         background: #fee67c;
@@ -49,10 +50,15 @@
         border-radius: 5px;
         cursor:pointer;
         padding:10px;
-        margin:0px 30px;
+        margin:5px 30px;
+
     }
     .product-card{
         padding-top:5px;
+        font-size: 24px;
+    }
+    .productcontent2 .h6{
+        font-size: 20px;
     }
     .btn{
         text-decoration:none;
@@ -64,4 +70,7 @@
         border-radius:6px;
         font-size:20px;
         cursor: pointer;
+    }
+    .q{
+        font-size: 16px;
     }

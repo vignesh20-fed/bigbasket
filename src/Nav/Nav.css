@@ -1,8 +1,8 @@
-.nav-sec{
+/* .nav-sec{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-  background-color: #fff;
+  background-color: #fff; 
   }
 
   .navimg img{
@@ -23,7 +23,7 @@
   .shopicon{
     color:red;
     padding: 20px 40px;
-  }
+  }*/
   .cartrows{
      display:flex;
      flex-wrap: wrap;
@@ -37,13 +37,128 @@
     width:33.3%;
     padding: 10px 0;
   }
+  .ss h5{
+    font-size:16px;
+  }
+  .ss h6{
+    font-size:16px;
+  }
   .navimg2 img{
-    width:35%;
+    width:20% !important;
   }
   .menucontent{
     margin-right: 30px !important;
+    width:100% !important;
   }
   .navicon{
     color:lightgreen !important;
     font-size: 30px !important;
   }
+  .css-6hp17o-MuiList-root-MuiMenu-list {
+    padding: 10px !important;
+  } 
+  .container1{
+    width:90%;
+    margin: 0 auto;
+    margin-top: 20px;
+    box-shadow: none;
+
+  }
+  .col-lg-12{
+    width:100%;
+  }
+  .nav-sec{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  background-color: #fff;
+
+  }
+  .navbox{
+    display: flex;
+    border: solid 1px rgba(179, 176, 176, 0.623) !important;
+  }
+  .navoffer{
+      color:#000;
+      margin-top: 10px;
+      margin-left: 15px;
+      cursor: pointer;
+      transition: 0.3s; 
+  }
+  .navoffer:hover{
+    background-color: #84c225 !important;
+    color: #fff !important;
+    padding: 10px 15px !important;
+    margin-top: 0 !important;
+    transition: 0.3s;
+    margin-left: 0px;
+  }
+  .offericon{
+    color:rgb(143, 4, 4) !important;
+      font-size: 24px;
+  }
+  .navimg img{
+     width:60%;
+  }
+  .searchic{
+    background-color:#84c225;
+    color:#fff;
+    padding: 7px 0;
+  }
+  .col-lg-4{
+    width:33.3%
+  }
+  ::placeholder{
+    color:#000 !important;
+    padding-left: 10px;
+  }
+  .shopicon{
+    color:red;
+    padding: 20px 40px;
+  }
+  .cartrows{
+     display:flex;
+     flex-wrap: wrap;
+     color:#000;
+     background-color: #fff;
+     box-shadow: 0 0 30px #ccc;
+  }
+  .col-nav-1{
+    width:25%;
+    padding: 10px 0;
+  }
+  .navicon{
+    color:rgb(143, 4, 4) !important;
+    font-size: 50px !important;
+  }
+  .navbox{
+    background-color: #fff;
+   
+  }
+  .navfoot{
+     color:blue;
+     font-weight: 600;
+  }
+  .navboxbtn{
+    border: solid 1px rgba(128, 128, 128, 0.459) !important;
+   background-color: #84c225 !important;
+   color: #fff !important;
+    
+  }
+  .navboxbtn h3{
+    text-align: left !important;
+  }
+  .css-1su9lvs-MuiPaper-root-MuiAppBar-root{
+     box-shadow:none !important;
+  }
+  .react-multiple-carousel__arrow{
+    opacity:0 !important;
+  }
+  .navboxbtn span{
+    font-size: 19px;
+    margin-left: 20px;
+  }
+/* .css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+  top: 90px !important;
+  right: 0px !important;
+} */

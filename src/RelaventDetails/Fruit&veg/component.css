@@ -1,13 +1,17 @@
 .fruitcontainer{
     width:100%;
     margin:0 auto;
+    padding: 50px 0;
 }
 .fruitrow{
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
 }
+.fruitcard{
+    padding: 28px 5px;
 
+}
 .fruitcol1{
     width:20%;
     transition: 0.3s;
@@ -19,23 +23,17 @@
 }
 .fruitcol3{
     width: 25%;
-  
-   
 }
 .fruitcol2{
     width:70%;
 }
- .position{
+.css-1xez8po-MuiPaper-root-MuiCard-root {
     position: relative ;
 }
-
-.offer{
-    position: absolute;
-    top:0;
+.fruitfoot{
     text-align: center;
-    background-color: #fff;
+    font-size: 30px;
     color:red;
-    box-shadow: 0 0 20px #ccc;
-    padding: 4px;
 }
+
 

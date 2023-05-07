@@ -9,10 +9,10 @@
 }
 .teamcontainer h1{
     font-weight: 400;
-    font-size: 40px;
+    font-size: 30px;
     color: #0c5b47;
     text-align: center;
-    padding-bottom: 40px;
+    padding:30px;
 }
 .teamrow{
    display: flex;
@@ -83,9 +83,13 @@ input{
     color:red;
     box-shadow: 0 0 20px #ccc;
     padding: 4px;
+    width:100%;
 }
 .css-46bh2p-MuiCardContent-root {
     padding: 11px 16px;
+}
+.css-o69gx8-MuiCardMedia-root {
+    margin-top: 30px !important;
 }
 .offericon{
     font-size: 14px !important;

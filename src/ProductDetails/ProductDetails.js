@@ -2,8 +2,7 @@ import React, {useContext,useState} from 'react'
 import { stateContext } from '../context/statecontext';
 import './productdetails.css'
 import Footer from '../Footer/footer';
-import Nav from '../Nav/Nav';
-import Faq from '../faq/Faq';
+import Faq from './Faq';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 
 const ProductDetails = () => {
@@ -20,6 +19,8 @@ const ProductDetails = () => {
   console.log(extracard());
   const [func,setFunc]=useState(extracard())
   console.log(func);
+  const [qty, setQty] = useState(1);
+  console.log(qty);
   const decrement = (id) =>{
      
       if(func[id] > 0){
@@ -37,7 +38,6 @@ const ProductDetails = () => {
   return (
     <>
     <div class="productsec">
-      <Nav/>
           <div className="containers">
           {[get.obj]?.map((value,index)=>{
                       return <>
@@ -52,7 +52,7 @@ const ProductDetails = () => {
                       <h2 className='pad'>{value?.heading}</h2>
                        <h1>{value.details}</h1>
                        <div>
-                                <h6>MRP: <span><del>{value.strike}</del></span> <span>{value.rupees}</span></h6>
+                                <h6 className='h6'>MRP: <span><del>{value.strike}</del></span> <span>{value.rupees}</span></h6>
                              </div>
                              <div className='cardflex'>
                                 <div className='cardicon'>
@@ -66,9 +66,9 @@ const ProductDetails = () => {
                        <div className='product-content'>
   
                         <div>
-                                 <h6>QUANTITY</h6>   
+                                 <h6 className='q'>QUANTITY:</h6>   
                                 <button className='btn' onClick={()=>decrement(value.id)}>-</button>
-                                <input class="inputcard" value={get.quantity[value.id]} size={5}/>
+                                <input class="inputcard" value={value.qty} size={5}/>
                                  <button className='btn' onClick={()=>increment(value.id,value.stock)}>+</button>
                           </div>
                         <div>
@@ -82,8 +82,6 @@ const ProductDetails = () => {
                           <button className='footicons'>SAVE</button>
                         </div>
                        </div>
-                      
-                    
                                       
                        </div>
                        <div>
@@ -95,8 +93,9 @@ const ProductDetails = () => {
             </div>
              </>
             })}
+              <Faq/>
           </div>    
-          <Faq/>
+        
     </div>
     <Footer/>
     </>

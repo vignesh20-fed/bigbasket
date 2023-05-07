@@ -12,15 +12,16 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { stateContext } from '../../context/statecontext.js';
 import { useNavigate , Link} from 'react-router-dom';
-import StarIcon from '@mui/icons-material/Star';
-import "./snack.css"
+// import "./component.css"
 import Footer from '../../Footer/footer.js';
 import Sidebar from '../../sidebar/Sidebar.js';
-import { Icon } from "@iconify/react";
-const Snack2 = () => {
-    const {state:{cart,teams},dispatch}= useContext(stateContext)
-    console.log(cart)
-     
+
+import { Icon } from '@iconify/react';
+
+const  Beverages02 = () => {
+    const {state:{cart,beverage02},dispatch}= useContext(stateContext)
+    console.log(beverage02)
+    
     const {
       filterState: {
         priceSort_below20,
@@ -37,7 +38,7 @@ const Snack2 = () => {
       },
       filterDispatch,
     } = useContext(stateContext);
-    const [age, setAge] = React.useState('');
+     const [age, setAge] = useState('');
 
     const handleChange = (event) => {
       setAge(event.target.value);
@@ -48,124 +49,28 @@ const Snack2 = () => {
       navigate4("/secondslide");
       dispatch({type:"DETAILS",payload:{obj : value, quantity : qty}})
     }
-    let snack2=[
-      {
-         id:73,
-         img:"https://www.bigbasket.com/media/uploads/p/l/40178013_12-emperia-earl-grey-black-tea.jpg",
-         icon:"https://www.bbassets.com/static/v2662/custPage/build/content/img/vegicon.svg",
-         heading:"Tasties",
-         details:"Khata Meetha",
-         rating:"4",
-         rupees: 50,
-         delievery:"Standard Delivery : Not available",
-         quantity:["2kg-Rs 46.00","1kg-RS 80.00","5kg-RS 500.00"],
-       },
-       {
-           id:74,
-           img:"https://www.bigbasket.com/media/uploads/p/l/40178018_11-emperia-orange-spice-green-tea.jpg",
-           heading:"Tasties",
-           details:"Aloo Bhujia Namkeen",
-           rating:"4",
-           rupees: 15,
-           delievery:"Standard Delivery: Not available",
-           quantity:["2kg-Rs 40.00","1kg-RS 20.00","250g-RS 20.00"],
-           offer:10
-         },
-         {
-           id:75,
-           img:"https://www.bigbasket.com/media/uploads/p/l/40190799_7-true-elements-whole-instant-oats-gluten-free.jpg",
-           heading:"24 Mantra Organic",
-           details:"Peanut Joggery Chikki",
-           rating:"4",
-           rupees:"RS 50",
-           delievery:"Standard Delivery : Not available",
-           quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 20.00","500g-Rs 40.00"],
-           offer:15
-         },
-         {
-           id:76,            
-           img:"https://www.bigbasket.com/media/uploads/p/l/245509_5-dabur-hommade-coconut-milk-goodness-of-2-creamy-coconuts.jpg",
-           heading:"Britannia NutriChoice",
-           details:"Digestive High Fibre Biscuits -",
-           rating:"4.2",
-           rupees:199,
-           delievery:"Standard Delivery: Not available",
-           quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 20.00","500g-Rs 40.00"],
-           offer:18
-         },
-         {
-           id:77,
-             img:"https://www.bigbasket.com/media/uploads/p/l/40252021_2-graminway-moong-daal-cheela-mix-spices-blended-authentic-taste-for-cheela-chapatis-parantha.jpg",
-             heading:"Tasties",
-             details:"Namkeen-Khatta Murruku",
-             rating:"3.6",
-             rupees: 14,
-             delievery:"Standard Delivery: Not available",
-             quantity:["50g-Rs 5.00","1kg-RS 50.00","250g-RS 10.00","500g-Rs 15.00"],
-             offer:25
-           },
-           {
-             id:78,
-             img:"https://www.bigbasket.com/media/uploads/p/l/40188287_4-happychef-korean-barbecue-sauce.jpg",
-             heading:"Cadbury Oreo",
-             details:"Original Vanilla-Flavoured",
-             rating:"4.2",
-             rupees: 85,
-             stock:"20",
-             delievery:"Standard Delivery: Not available",
-             quantity:["50g-Rs 40.00","1kg-RS 80.00","250g-RS 80.00","500g-Rs 60.00"],
-             offer:28
-           },
-           {  
-               id:79,
-               img:"https://www.bigbasket.com/media/uploads/p/l/40128697_20-true-elements-rolled-oats-gluten-free-high-protein-fibre-breakfast.jpg",
-               heading:"Pringles",
-               details:"Potato Chips - Sour Cream",
-               rating:"4.2",
-               rupees: 115,
-               delievery:"Standard Delivery: Not available",
-               quantity:["50g-Rs 10.00","1kg-RS 90.00","250g-RS 15.00","500g-Rs 40.00"],
-               offer:50
-             },
-             {
-               id:80,
-               img:"https://www.bigbasket.com/media/uploads/p/l/265966_6-mtr-breakfast-mix-rava-idli.jpg",
-               heading:"Britannia",
-               details:"Marie Gold Biscuit ",
-               rating:"4.2",
-               rupees: 140,
-               delievery:"Standard Delivery: Not available",
-               quantity:["50g-Rs 10.00","1kg-RS 100.00","250g-RS 30.00","500g-Rs 50.00"],
-               offer:20
-             },
-   ]
+
     const extracard = () => {
         let a = {}
-        for(let i=0; i<snack2.length ;i++){
-             a[snack2[i].id] = 1;
+        for(let i=0; i<beverage02.length ;i++){
+             a[beverage02[i].id] = 1;
         }
         return a;
     }
     console.log(extracard());
-    const [func,setFunc]=useState(extracard())
-    console.log(func);
-    const decrement = (id) =>{
-       
-        if(func[id] > 0){
-          setFunc(prevcount => ({...prevcount,[id] : prevcount[id] - 1}))
-        }
-   
-      }
+    const [qty, setQty] = useState(1);
+    console.log(qty);
+    const decrement = (id) => {
+      beverage02[id].qty -= 1;
+      dispatch({ type: "DEC", payload: beverage02 });
+    };
   
-      const increment = (id,stock) =>{
-        if(func[id] < stock){
-          setFunc(prevcount => ({...prevcount, [id] : prevcount[id] + 1}))
-        }
-      }
-      
-      
+    const increment = (id) => {
+      beverage02[id].qty += 1;
+      dispatch({ type: "INC", payload: beverage02 });
+    };
       const sortedProduct = () => {
-        let sortedArray = snack2;
+        let sortedArray = beverage02;
         if (priceSort_below20) {
           sortedArray = sortedArray.filter((item, index) => {
             return item.rupees <= 20;
@@ -224,6 +129,7 @@ const Snack2 = () => {
         }
         return sortedArray;
       };
+
   return (
     <div>
         <div class="fruitcontainer">
@@ -232,7 +138,7 @@ const Snack2 = () => {
                 <Sidebar/>
             </div>
             <div className='fruitcol2'>
-            {sortedProduct().length > 0 ? ( 
+            {sortedProduct().length > 0 ? (
                 <div className="fruitcontent">
            {sortedProduct().map((value,index)=>{
                       return <>
@@ -240,7 +146,7 @@ const Snack2 = () => {
                       <div className='fruitcol3'>
                       <div className='fruitcard' key={index}>
                       <Card sx={{ maxWidth: 300 }} className='cardcolor'>
-                        <div className='image-card' onClick={()=>productShow(value, func)}>
+                        <div className='image-card' onClick={()=>productShow(value)}>
                             <CardMedia
 
                                 component="img"
@@ -248,10 +154,9 @@ const Snack2 = () => {
                                 image={value.img}
                                 alt="vicky"
                                 className="image"
-                                
                             />
                             </div>
-                           
+                            <h5 className='offer'>GET {value.offer} % OFF<Icon icon="bxs:offer" className="offericon" /></h5>
                             <CardContent >
                             <div>
                                 <img src="https://www.bbassets.com/static/v2662/custPage/build/content/img/vegicon.svg"></img>
@@ -260,14 +165,13 @@ const Snack2 = () => {
                                <h5>{value.details}</h5>
                              
                              <div>
-                                <button className="snackbtn">{value.rating}</button>
                              <Box sx={{ minWidth: 120 }}>
                                 <FormControl fullWidth>
                                     
                                     <Select
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={age}
+                                    value='hello'
                                     label="Age"
                                     onChange={handleChange}
                                     >
@@ -280,7 +184,8 @@ const Snack2 = () => {
                                 </Box>
                              </div>
                              <div>
-                                <h6>MRP: <span><del>{value.strike}</del></span> <span>{value.rupees}</span></h6>
+                                <div>{value.rating}</div>
+                                <h6>MRP: <span><del>{value.strike}</del></span> <span>Rs {value.rupees}</span></h6>
                              </div>
                              <div className='cardflex'>
                                 <div className='cardicon'>
@@ -290,12 +195,25 @@ const Snack2 = () => {
                                      <h6>{value.delievery}</h6>
                                     </div>
                                 </div>
-        
+                                <div className='cardfoot'>
+                                <div>
+                                 <h6>QUANTITY</h6>   
+                                <button className='btn' onClick={()=>decrement(index)}>-</button>
+                                <input class="inputcard" value={value.qty } size={1}/>
+                                 <button className='btn' onClick={()=>increment(index)}>+</button>
+                                    </div>
+                                    <div>
+                                    
+                                        {cart.some(e => e.id === value.id) ? (
+                                             <button className='footicon' onClick={()=>dispatch({type:"REMOVE",payload:value})} style={{backgroundColor:'red',color:'white'}}>REMOVE</button>
+                                        ) : (
+                                            <button className='footicon' onClick={()=>dispatch({type:"CART",payload:value})} >ADD CART</button>
+                                        )}
+                                      
+                                    
+                                    </div>
+                                </div>
                             </CardContent>
-                            <h5 className="offer">
-                               GET {value.offer}% OFF
-                               <Icon icon="bxs:offer" className="offericon" />
-                             </h5>
                             </Card>
                         </div>
                         
@@ -303,10 +221,11 @@ const Snack2 = () => {
                     </>
                     })}
                  </div>   
-
+       
         ) : (
           <div className="fruitfoot">Not available!</div>
         )}
+
         <Footer/>
         </div>
          </div>
@@ -316,4 +235,4 @@ const Snack2 = () => {
   )
 }
 
-export default Snack2
+export default Beverages02
